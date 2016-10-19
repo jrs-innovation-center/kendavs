@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Computer</title>
+  <link rel="stylesheet" href="//css.code10k.com/kit.css">
+</head>
+<body class="bg-yellow black-70 pa4">
+  <h1 class="f1">Computer Simulation</h1>
+  <div class="cf">
+    <div class="fl w-50">
+      <h3>Memory</h3>
+      <form>
+        <div>
+          <label>0</label>
+          <input class="" type="text" readonly id="mem-0" name="mem-0">
+        </div>
+        <div>
+          <label>1</label>
+          <input type="text" readonly id="mem-1">
+        </div>
+        <div>
+          <label>2</label>
+          <input type="text" readonly id="mem-2">
+        </div>
+        <div>
+          <label>3</label>
+          <input type="text" readonly id="mem-3">
+        </div>
+        <div>
+          <label>4</label>
+          <input type="text" readonly id="mem-4">
+        </div>
+      </form>
+    </div>
+    <div class="fl w-50">
+      <h3>CPU</h3>
+      <form id="cpu">
+        <div class="dib">
+          <select id="command" name="command">
+            <option>command</option>
+            <option value="peek">peek</option>
+            <option value="poke">poke</option>
+            <option value="get">get</option>
+            <option value="set">set</option>
+            <option value="add">add</option>
+          </select>
+        </div>
+        <div class="dib">
+          <input type="number" id="index" name="index" placeholder="1 - 4">
+        </div>
+        <div class="mt4">
+          <button class="btn btn-s">Compute</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="cf">
+    <h3 class="tl">Storage</h3>
+    <form>
+      <div>
+        <label>1</label>
+        <input type="text" id="disk-1" name="disk-1">
+      </div>
+      <div>
+        <label>2</label>
+        <input type="text" id="disk-2">
+      </div>
+      <div>
+        <label>3</label>
+        <input type="text" id="disk-3">
+      </div>
+      <div>
+        <label>4</label>
+        <input type="text" id="disk-4">
+      </div>
+    </form>
+
+  </div>
+  <script src="//lib.code10k.com/computer.js"></script>
+  <script src="cpu.js"></script>
+</body>
+</html>

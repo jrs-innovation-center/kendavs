@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://unpkg.com/tachyons@4.5.1/css/tachyons.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css">
+
+<article class="animated slideInRight mw5 center bg-washed-blue br3 pa3 pa4-ns mv3 ba b--black-10">
+  <div class="tc">
+    <img src="http://appinventor.mit.edu/explore/sites/all/files/Teach/media/image_8_ball.jpg" class="br-100 h3 w3 dib" title="Eight Ball">
+    <h1 class="animated bounce f4">Predict The Future</h1>
+    <hr class="mw3 bb bw1 b--black-10">
+    <button id="predictTheFuture" class="f6 center grow no-underline br-pill ba bw2 ph3 pv2 mb2 dib hot-pink" href="#0">Predict</button>
+    <div id="theFuture" class="animated bounce lh-copy measure center f4 hot-pink"></div>
+  </div>
+</article>
+
+<script>
+  var answers = [
+    'It is certain',
+    'It is decidely so',
+    'Reply hazy try again',
+    'Better not tell you now',
+    'Don\'t count on it',
+    'Outlook not so good'
+  ]
+
+ function getRandomIntInclusive(min, max){
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+function predictTheFuture() {
+  return answers[getRandomIntInclusive(0,5)]
+}
+  document.getElementById('predictTheFuture')
+     .addEventListener('click', function () {
+       setTimeout(function() {
+       var el = document.getElementById('theFuture')
+       el.classList.add('animated')
+       el.classList.add('flipInX')
+       el.innerHTML = predictTheFuture()
+
+  }, 500)
+       setTimeout(function() {
+         var el = document.getElementById('theFuture')
+         el.classList.remove('animated')
+         el.classList.remove('flipInX')
+       }, 1000)
+  })
+</script>
+

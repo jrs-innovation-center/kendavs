@@ -1,0 +1,29 @@
+<h1>Guess a Number Between 1 and 10</h1>
+
+<form id="easyButton">
+<input type="number" id="bar" placeholder="pick a number">
+<button>Guess</button>
+
+</form>
+
+  <script>
+    function getRandomIntInclusive(min, max){
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+  document.getElementById('easyButton')
+     .addEventListener('submit', changeBar)
+
+  var answer = getRandomIntInclusive(1,10).toString()
+
+  function changeBar (event) {
+    event.preventDefault()
+    var v = document.getElementById('bar').value
+    if(v === answer) {
+      alert('Congrats')
+      return
+    }
+    alert('You Lose!')
+  }
+</script>

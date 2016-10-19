@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Internet</title>
+    <link rel="stylesheet" href="//css.code10k.com/kit.css">
+  </head>
+  <body class="bg-black-60 pa4 dark-red">
+    <section class="mt3">
+      <h1 class="f1">Internet Simulation</h1>
+      <div class="cf">
+        <div class="fl w-50 bg-black-30 dark-pink pv2 ph3">
+          <h3>Client Computer</h3>
+          <form id="request" class="pa3" name="client">
+            <div class="mt1">
+              <label class="db">IP Address</label>
+              <input class="db" name="clientIp" value="192.168.0.20" />
+            </div>
+            <div class="mt1">
+              <label class="db">Ephemeral Port</label>
+              <input class="db" name="clientPort" value="80000" />
+            </div>
+            <div class="mt1">
+              <label class="db">Request</label>
+              <textarea id="requestMsg" name="clientRequest" class="h4 w-100">
+GET /index.html HTTP/1.1
+
+              </textarea>
+            </div>
+            <div class="mt1">
+              <label class="db">Response</label>
+              <textarea id="clientResponse" name="clientResponse" class="h4 w-100">
+
+              </textarea>
+            </div>
+            <div class="mt1">
+              <button class="btn" name="sendRequest">Send Request</button>
+            </div>
+          </form>
+        </div>
+        <div class="fl w-50 bg-black-30 pv2 ph3 black-60">
+          <h3>Server Computer</h3>
+          <form id="server" class="pa3" name="server">
+            <div class="mt1">
+              <label class="db">IP Address</label>
+              <input class="db" name="serverIp" value="72.215.25.1" />
+            </div>
+            <div class="mt1">
+              <label class="db">Port</label>
+              <input class="db" name="serverPort" value="80" />
+            </div>
+            <div class="mt1">
+              <label class="db">Request</label>
+              <textarea id="serverRequest" name="serverRequest" class="h4 w-100">
+
+              </textarea>
+            </div>
+            <div class="mt1">
+              <label class="db">Response</label>
+              <textarea id="serverResponse" name="serverResponse" class="h4 w-100">
+HTTP/1.1 200 OK
+Date: Mon, 23 May 2005 22:38:34 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Encoding: UTF-8
+Content-Length: 138
+Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
+Server: Apache/1.3.3.7 (Unix) (Red-Hat/Linux)
+ETag: "3f80f-1b6-3e1cb03b"
+Accept-Ranges: bytes
+Connection: close
+
+<html>
+<head>
+  <title>An Example Page</title>
+</head>
+<body>
+  Hello World, this is a very simple HTML document.
+</body>
+</html>
+              </textarea>
+            </div>
+            <div class="mt1">
+              <button class="btn" name="sendResponse">Send Response</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>
